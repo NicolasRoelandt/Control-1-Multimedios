@@ -9,7 +9,7 @@
     <string name="empty_string"></string>
     <string name="page_url">http://maps.googleapis.com/maps/api/directions/json?origin=Valparaiso&amp;destination=Santiago&amp;sensor=false</string>
     
-    <string name="connectivity_error_title">Existe un error de conectividad, por favor revisa tus ajustes</string>
+    <string name="connectivity_error_title">Error</string>
     <string name="connectivity_error">Existe un error de conectividad, por favor revisa tus ajustes</string>
     <string name="config_button">Ir a configuración</string>
     <string name="accept_button">Aceptar</string>
