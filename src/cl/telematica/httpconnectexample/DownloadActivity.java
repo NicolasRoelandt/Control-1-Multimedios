@@ -1,10 +1,16 @@
 package cl.telematica.httpconnectexample;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
 import cl.telematica.httpconnectexample.asynctask.DownloadManager;
 import cl.telematica.httpconnectexample.interfaces.DownloadListener;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -35,14 +41,32 @@ public class DownloadActivity extends Activity implements DownloadListener {
 	public void onRequestComplete(String data) {
 		if(progressBar.getVisibility() == View.VISIBLE)
 			progressBar.setVisibility(View.GONE);
-		text.setText(data);
+		try{
+		JSONArray array = new JSONArray(data);
+		int arraySize = array.length();
+		for(int i =0; i<arraySize;i++)
+		{
+		   JSONObject o = array.getJSONObject(i);
+		   String value = o.getString("title");
+		   text.setText(value);
+		}
+		 //  View view = (View) findViewById(R.layout.activity_download); //the layout you set in `setContentView()`
+//		   LinearLayout picLL = new LinearLayout(CurrentActivity.this);
+//		   picLL.layout(0, 0, 100, 0);
+//		   picLL.setOrientation(LinearLayout.HORIZONTAL);
+//		   ((ViewGroup) view).addView(picLL);
+//		   NetworkImageView myImage;
+//		   myImage = setImageURL(o.getString("image"));
+		   
+		} catch (Exception e) {} ;
+		
 	}
 
 	@Override
 	public void onError(String error, int code) {
 		if(progressBar.getVisibility() == View.VISIBLE)
 			progressBar.setVisibility(View.GONE);
-		text.setText(error);
+		text.setText("No funciono");
 	}	
 
 }

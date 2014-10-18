@@ -7,7 +7,7 @@
     
     <string name="button_string">Descargar datos</string>
     <string name="empty_string"></string>
-    <string name="page_url">http://maps.googleapis.com/maps/api/directions/json?origin=Valparaiso&amp;destination=Santiago&amp;sensor=false</string>
+    <string name="page_url">http://www.mocky.io/v2/5440667984d353f103f697c0</string>
     
     <string name="connectivity_error_title">Error</string>
     <string name="connectivity_error">Existe un error de conectividad, por favor revisa tus ajustes</string>
